@@ -1,0 +1,61 @@
+/* Sylence — NUL, for the web.
+   Mirrors lib/theme.dart: pure OLED black, no colour, radius 0, state
+   carried by opacity and hairlines. Space Grotesk for interface, IBM Plex
+   Mono for data and labels; both are loaded from Google Fonts with real
+   fallbacks so the page is legible if they never arrive. */
+:root {
+  --bg:   #000000;
+  --hair: #2A2A26;
+  --tick: #3A3A34;
+  --muted:#55554F;
+  --mid:  #8A8A82;
+  --text: #E8E8E2;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--mid);
+  font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  max-width: 760px; margin: 0 auto; padding: 64px 24px 96px;
+  line-height: 1.75; font-size: 17px;
+}
+h1, h2, h3 { color: var(--text); font-weight: 300; line-height: 1.2; }
+h1 { font-size: 2.4rem; margin: 0 0 .6em; letter-spacing: -0.5px; }
+h2 { font-size: 1.35rem; margin: 2.6em 0 .6em; }
+h3 { font-size: 1.05rem; margin: 2em 0 .4em; }
+p { margin: 0 0 1.1em; }
+strong { color: var(--text); font-weight: 400; }
+a { color: var(--text); text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-color: var(--tick); }
+a:hover { text-decoration-color: var(--text); }
+ul, ol { padding-left: 1.3em; } li { margin: .5em 0; }
+hr { border: 0; border-top: 1px solid var(--hair); margin: 3.5em 0; }
+code { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+       font-size: .9em; color: var(--mid); }
+.muted { color: var(--muted); font-size: .9em; }
+.kicker { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+          font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+          color: var(--muted); margin: 0 0 1.6em; }
+.mark { display:block; width: 84px; height: 84px; margin: 0 0 32px; }
+.cta { display: inline-block; margin: .6em 0 0; padding: 15px 26px;
+       border: 1px solid var(--text); color: var(--text);
+       text-decoration: none;
+       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+       font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; }
+.cta:hover { background: var(--text); color: var(--bg); }
+.note { border-left: 1px solid var(--hair); padding-left: 20px;
+        color: var(--muted); font-size: .93em; }
+nav.foot { margin-top: 4em; padding-top: 2em; border-top: 1px solid var(--hair);
+           font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+           font-size: .74rem; letter-spacing: .1em; color: var(--muted); }
+nav.foot a { display: inline-block; margin: 0 18px .5em 0; color: var(--mid); }
+figure.spectrum { margin: 2em 0; }
+figure.spectrum figcaption { font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin-top: .8em; }
+/* Arabic must never be letterspaced — joined letterforms. */
+[dir="rtl"] { font-family: 'IBM Plex Sans Arabic', Tahoma, Arial, sans-serif;
+              letter-spacing: 0; }
+[dir="rtl"] ul, [dir="rtl"] ol { padding-left: 0; padding-right: 1.3em; }
+[dir="rtl"] .note { border-left: 0; border-right: 1px solid var(--hair);
+                    padding-left: 0; padding-right: 20px; }
